@@ -10,7 +10,8 @@ import {
   where,
 } from "firebase/firestore";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-const history = () => {
+
+const History = () => {
   const [userEmail, setUserEmail] = useState(null);
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -51,6 +52,7 @@ const history = () => {
   };
   useEffect(() => {
     fetchBookings();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userEmail]);
 
   if (loading) {
@@ -96,4 +98,4 @@ const history = () => {
   );
 };
 
-export default history;
+export default History;

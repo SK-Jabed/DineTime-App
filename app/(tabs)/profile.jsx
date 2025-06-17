@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 import { getAuth, signOut } from "firebase/auth";
 
-export default function profile() {
+export default function Profile() {
   const router = useRouter();
   const auth = getAuth();
   const [userEmail, setUserEmail] = useState(null);

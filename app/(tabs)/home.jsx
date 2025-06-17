@@ -17,17 +17,17 @@ import logo from "../../assets/images/dinetimelogo.png";
 import banner from "../../assets/images/homeBanner.png";
 import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "../../config/firebaseConfig";
-// import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Home() {
  
   const router = useRouter();
   const [restaurants, setRestaurants] = useState([]);
-//   const temp = async () => {
-//     const value = await AsyncStorage.getItem("isGuest");
-//     const email = await AsyncStorage.getItem("userEmail");
-//     console.log(value, email);
-//   };
+  const temp = async () => {
+    const value = await AsyncStorage.getItem("isGuest");
+    const email = await AsyncStorage.getItem("userEmail");
+    console.log(value, email);
+  };
 
   const renderItem = ({ item }) => (
     <TouchableOpacity
@@ -58,7 +58,7 @@ export default function Home() {
 
   useEffect(() => {
     getRestaurants();
-    // temp();
+    temp();
   }, []);
 
   return (
