@@ -9,28 +9,30 @@ import {
   ActivityIndicator,
   TouchableOpacity,
 } from "react-native";
-import { useRouter } from "expo-router";
-import React, { useEffect, useState } from "react";
+// import { useRouter } from "expo-router";
+// import React, { useEffect, useState } from "react";
+import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { BlurView } from "expo-blur";
 import logo from "../../assets/images/dinetimelogo.png";
 import banner from "../../assets/images/homeBanner.png";
-import { collection, getDocs, query } from "firebase/firestore";
-import { db } from "../../config/firebaseConfig";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { restaurants } from "../../store/restaurants";
+// import { collection, getDocs, query } from "firebase/firestore";
+// import { db } from "../../config/firebaseConfig";
+// import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Home() {
-  const router = useRouter();
-  const [restaurants, setRestaurants] = useState([]);
-  const temp = async () => {
-    const value = await AsyncStorage.getItem("isGuest");
-    const email = await AsyncStorage.getItem("userEmail");
-    console.log(value, email);
-  };
+//   const router = useRouter();
+//   const [restaurants, setRestaurants] = useState([]);
+//   const temp = async () => {
+//     const value = await AsyncStorage.getItem("isGuest");
+//     const email = await AsyncStorage.getItem("userEmail");
+//     console.log(value, email);
+//   };
 
   const renderItem = ({ item }) => (
     <TouchableOpacity
-      onPress={() => router.push(`/restaurant/${item.name}`)}
+    //   onPress={() => router.push(`/restaurant/${item.name}`)}
       className="bg-[#5f5f5f] max-h-64 max-w-xs flex justify-center rounded-lg p-4 mx-4 shadow-md"
     >
       <Image
@@ -46,25 +48,25 @@ export default function Home() {
     </TouchableOpacity>
   );
 
-  const getRestaurants = async () => {
-    const q = query(collection(db, "restaurants"));
-    const res = await getDocs(q);
+//   const getRestaurants = async () => {
+//     const q = query(collection(db, "restaurants"));
+//     const res = await getDocs(q);
 
-    res.forEach((item) => {
-      setRestaurants((prev) => [...prev, item.data()]);
-    });
-  };
-  useEffect(() => {
-    getRestaurants();
-    temp();
-  }, []);
+//     res.forEach((item) => {
+//       setRestaurants((prev) => [...prev, item.data()]);
+//     });
+//   };
+//   useEffect(() => {
+//     getRestaurants();
+//     temp();
+//   }, []);
 
   return (
     <SafeAreaView
       style={[
         { backgroundColor: "#2b2b2b" },
-        Platform.OS == "android" && { paddingBottom: 55 },
-        Platform.OS == "ios" && { paddingBottom: 20 },
+        Platform.OS === "android" && { paddingBottom: 55 },
+        Platform.OS === "ios" && { paddingBottom: 20 },
       ]}
     >
       <View className="flex items-center">
@@ -72,7 +74,7 @@ export default function Home() {
           <View className="flex flex-row">
             <Text
               className={`text-base h-10
-                  ${Platform.OS == "ios" ? "pt-[8px]" : "pt-1"}
+                  ${Platform.OS === "ios" ? "pt-[8px]" : "pt-1"}
                  align-middle text-white`}
             >
               {" "}
