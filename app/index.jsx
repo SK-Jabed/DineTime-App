@@ -1,3 +1,4 @@
+/* eslint-disable import/first */
 import { useRouter } from "expo-router";
 import {
   Image,
@@ -9,15 +10,15 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import logo from "../assets/images/dinetimelogo.png";
-const entryImg = require("../assets/images/Frame.png");
-// import AsyncStorage from "@react-native-async-storage/async-storage";
 // const logo = require("../assets/images/dinetimelogo.png");
+const entryImg = require("../assets/images/Frame.png");
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Index() {
   const router = useRouter();
 
   const handleGuest = async () => {
-    // await AsyncStorage.setItem("isGuest", "true");
+    await AsyncStorage.setItem("isGuest", "true");
     router.push("/home");
   };
 
