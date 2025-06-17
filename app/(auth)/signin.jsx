@@ -1,3 +1,4 @@
+/* eslint-disable import/first */
 import {
   View,
   Text,
@@ -6,67 +7,65 @@ import {
   Image,
   StatusBar,
   TextInput,
-//   Alert,
+  Alert,
 } from "react-native";
 import { useRouter } from "expo-router";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import logo from "../../assets/images/dinetimelogo.png";
 const entryImg = require("../../assets/images/Frame.png");
-// eslint-disable-next-line import/first
 import { Formik } from "formik";
-// eslint-disable-next-line import/first
 import validationSchema from "../../utils/authSchema";
-// import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-// import { doc, getDoc, getFirestore } from "firebase/firestore";
-// import AsyncStorage from "@react-native-async-storage/async-storage";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Signup = () => {
   const router = useRouter();
-//   const auth = getAuth();
-//   const db = getFirestore();
-//   const handleGuest = async () => {
-//     await AsyncStorage.setItem("isGuest", "true");
-//     router.push("/home");
-//   };
-  const handleSignin = () => {};
+  const auth = getAuth();
+  const db = getFirestore();
+  const handleGuest = async () => {
+    await AsyncStorage.setItem("isGuest", "true");
+    router.push("/home");
+  };
 
-//   const handleSignin = async (values) => {
-//     try {
-//       const userCredentials = await signInWithEmailAndPassword(
-//         auth,
-//         values.email,
-//         values.password
-//       );
-//       const user = userCredentials.user;
+  const handleSignin = async (values) => {
+    try {
+      const userCredentials = await signInWithEmailAndPassword(
+        auth,
+        values.email,
+        values.password
+      );
+      const user = userCredentials.user;
 
-//       const userDoc = await getDoc(doc(db, "users", user.uid));
-//       if (userDoc.exists()) {
-//         console.log("User data:", userDoc.data());
-//         await AsyncStorage.setItem("userEmail", values.email);
-//         await AsyncStorage.setItem("isGuest", "false");
-//         router.push("/home");
-//       } else {
-//         console.log("No such Doc");
-//       }
-//     } catch (error) {
-//       console.log(error);
+      const userDoc = await getDoc(doc(db, "users", user.uid));
+      if (userDoc.exists()) {
+        console.log("User data:", userDoc.data());
+        await AsyncStorage.setItem("userEmail", values.email);
+        await AsyncStorage.setItem("isGuest", "false");
+        router.push("/home");
+      } else {
+        console.log("No such Doc");
+      }
+    } catch (error) {
+      console.log(error);
 
-//       if (error.code === "auth/invalid-credential") {
-//         Alert.alert(
-//           "Signin Failed!",
-//           "Incorrect credentials. Please try again.",
-//           [{ text: "OK" }]
-//         );
-//       } else {
-//         Alert.alert(
-//           "Sign in Error",
-//           "An unexpected error occurred. Please try again later.",
-//           [{ text: "OK" }]
-//         );
-//       }
-//     }
-//   };
+      if (error.code === "auth/invalid-credential") {
+        Alert.alert(
+          "Signin Failed!",
+          "Incorrect credentials. Please try again.",
+          [{ text: "OK" }]
+        );
+      } else {
+        Alert.alert(
+          "Sign in Error",
+          "An unexpected error occurred. Please try again later.",
+          [{ text: "OK" }]
+        );
+      }
+    }
+  };
+
   return (
     <SafeAreaView className={`bg-[#2b2b2b]`}>
       <ScrollView contentContainerStyle={{ height: "100%" }}>
@@ -149,7 +148,7 @@ const Signup = () => {
               </Text>
               <TouchableOpacity
                 className="flex flex-row justify-center mb-5 p-2 items-center"
-                // onPress={handleGuest}
+                onPress={handleGuest}
               >
                 <Text className="text-white font-semibold">Be a</Text>
                 <Text className="text-base font-semibold underline text-[#f49b33]">

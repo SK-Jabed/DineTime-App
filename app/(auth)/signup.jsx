@@ -1,3 +1,4 @@
+/* eslint-disable import/first */
 import {
   View,
   Text,
@@ -6,66 +7,64 @@ import {
   Image,
   StatusBar,
   TextInput,
-//   Alert,
+  Alert,
 } from "react-native";
 import { useRouter } from "expo-router";
-// import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import logo from "../../assets/images/dinetimelogo.png";
 const entryImg = require("../../assets/images/Frame.png");
-// eslint-disable-next-line import/first
 import { Formik } from "formik";
-// eslint-disable-next-line import/first
 import validationSchema from "../../utils/authSchema";
-// import { doc, getFirestore, setDoc } from "firebase/firestore";
-// import AsyncStorage from "@react-native-async-storage/async-storage";
+import { doc, getFirestore, setDoc } from "firebase/firestore";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 const Signup = () => {
   const router = useRouter();
-//   const auth = getAuth();
-//   const db = getFirestore();
+  const auth = getAuth();
+  const db = getFirestore();
 
-//   const handleGuest = async () => {
-//     await AsyncStorage.setItem("isGuest", "true");
-//     router.push("/home");
-//   };
-const handleSignup = () => {};
+  const handleGuest = async () => {
+    await AsyncStorage.setItem("isGuest", "true");
+    router.push("/home");
+  };
 
 
-//   const handleSignup = async (values) => {
-//     try {
-//       const userCredentials = await createUserWithEmailAndPassword(
-//         auth,
-//         values.email,
-//         values.password
-//       );
-//       const user = userCredentials.user;
 
-//       await setDoc(doc(db, "users", user.uid), {
-//         email: values.email,
-//         createdAt: new Date(),
-//       });
+  const handleSignup = async (values) => {
+    try {
+      const userCredentials = await createUserWithEmailAndPassword(
+        auth,
+        values.email,
+        values.password
+      );
+      const user = userCredentials.user;
 
-//       await AsyncStorage.setItem("userEmail", values.email);
-//       await AsyncStorage.setItem("isGuest", "false");
+      await setDoc(doc(db, "users", user.uid), {
+        email: values.email,
+        createdAt: new Date(),
+      });
 
-//       router.push("/home");
-//     } catch (error) {
-//       if (error.code === "auth/email-already-in-use") {
-//         Alert.alert(
-//           "Signup Failed!",
-//           "This email address is already in use. Please use a different email.",
-//           [{ text: "OK" }]
-//         );
-//       } else {
-//         Alert.alert(
-//           "Signup Error",
-//           "An unexpected error occurred. Please try again later.",
-//           [{ text: "OK" }]
-//         );
-//       }
-//     }
-//   };
+      await AsyncStorage.setItem("userEmail", values.email);
+      await AsyncStorage.setItem("isGuest", "false");
+
+      router.push("/home");
+    } catch (error) {
+      if (error.code === "auth/email-already-in-use") {
+        Alert.alert(
+          "Signup Failed!",
+          "This email address is already in use. Please use a different email.",
+          [{ text: "OK" }]
+        );
+      } else {
+        Alert.alert(
+          "Signup Error",
+          "An unexpected error occurred. Please try again later.",
+          [{ text: "OK" }]
+        );
+      }
+    }
+  };
 
   return (
     <SafeAreaView className={`bg-[#2b2b2b]`}>
@@ -151,7 +150,7 @@ const handleSignup = () => {};
               </Text>
               <TouchableOpacity
                 className="flex flex-row justify-center mb-5 p-2 items-center"
-                // onPress={handleGuest}
+                onPress={handleGuest}
               >
                 <Text className="text-white font-semibold">Be a</Text>
                 <Text className="text-base font-semibold underline text-[#f49b33]">
