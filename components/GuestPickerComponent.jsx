@@ -1,13 +1,15 @@
-import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 
 const GuestPickerComponent = ({ selectedNumber, setSelectedNumber }) => {
   const decrement = () => {
     if (selectedNumber > 1) setSelectedNumber(selectedNumber - 1);
   };
+
   const increment = () => {
     if (selectedNumber < 12) setSelectedNumber(selectedNumber + 1);
   };
+
   return (
     <View className="flex flex-row items-center rounded-lg text-white text-base">
       <TouchableOpacity onPress={decrement} className="rounded">
