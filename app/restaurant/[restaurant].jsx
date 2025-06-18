@@ -14,8 +14,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../config/firebaseConfig";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import DatePickerComponent from "../../components/DatePickerComponent";
-import GuestPickerComponent from "../../components/GuestPickerComponent";
+import DatePickerComponent from "../../components/DatePicker";
+import GuestPickerComponent from "../../components/GuestPicker";
 import FindSlots from "../../components/FindSlots";
 
 export default function Restaurant() {
