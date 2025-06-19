@@ -20,7 +20,6 @@ import { db } from "../../config/firebaseConfig";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Home() {
- 
   const router = useRouter();
   const [restaurants, setRestaurants] = useState([]);
   const temp = async () => {

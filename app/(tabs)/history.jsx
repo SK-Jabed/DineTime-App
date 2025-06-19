@@ -26,6 +26,7 @@ const History = () => {
 
     fetchUserEmail();
   }, []);
+  
   const fetchBookings = async () => {
     if (userEmail) {
       try {
