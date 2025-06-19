@@ -29,8 +29,6 @@ const Signup = () => {
     router.push("/home");
   };
 
-
-
   const handleSignup = async (values) => {
     try {
       const userCredentials = await createUserWithEmailAndPassword(
