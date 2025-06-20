@@ -10,9 +10,11 @@ const DatePickerComponent = ({ date, setDate }) => {
     setShow(false);
     setDate(currentDate);
   };
+
   const handlePress = () => {
     setShow(true);
   };
+
   return (
     <View className="flex flex-row">
       <TouchableOpacity
