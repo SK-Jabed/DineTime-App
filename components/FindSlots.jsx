@@ -44,9 +44,11 @@ const FindSlots = ({
       setModalVisible(true);
     }
   };
+
   const handleCloseModal = () => {
     setModalVisible(false);
   };
+
   const handleSlotPress = (slot) => {
     let prevSlot = selectedSlot;
     if (prevSlot === slot) {
@@ -55,6 +57,7 @@ const FindSlots = ({
       setSelectedSlot(slot);
     }
   };
+
   const handleFormSubmit = async (values) => {
     try {
       await addDoc(collection(db, "bookings"), {
@@ -71,6 +74,7 @@ const FindSlots = ({
       console.log(error);
     }
   };
+  
   return (
     <View className="flex-1">
       <View className={`flex ${selectedSlot != null && "flex-row"} `}>
