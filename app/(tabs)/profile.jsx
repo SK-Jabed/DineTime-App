@@ -8,6 +8,7 @@ export default function Profile() {
   const router = useRouter();
   const auth = getAuth();
   const [userEmail, setUserEmail] = useState(null);
+  
   useEffect(() => {
     const fetchUserEmail = async () => {
       const email = await AsyncStorage.getItem("userEmail");
@@ -16,7 +17,7 @@ export default function Profile() {
 
     fetchUserEmail();
   }, []);
-  
+
   const handleLogout = async () => {
     try {
       await signOut(auth);

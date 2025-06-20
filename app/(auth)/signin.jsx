@@ -24,6 +24,7 @@ const Signup = () => {
   const router = useRouter();
   const auth = getAuth();
   const db = getFirestore();
+
   const handleGuest = async () => {
     await AsyncStorage.setItem("isGuest", "true");
     router.push("/home");
@@ -39,6 +40,7 @@ const Signup = () => {
       const user = userCredentials.user;
 
       const userDoc = await getDoc(doc(db, "users", user.uid));
+      
       if (userDoc.exists()) {
         console.log("User data:", userDoc.data());
         await AsyncStorage.setItem("userEmail", values.email);
