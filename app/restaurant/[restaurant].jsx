@@ -46,6 +46,7 @@ export default function Restaurant() {
       flatListRef.current.scrollToIndex({ index: nextIndex, animated: true });
     }
   };
+  
   const handlePrevImage = () => {
     const carouselLength = carouselData[0]?.images.length;
     if (currentIndex > 0) {
@@ -188,6 +189,7 @@ export default function Restaurant() {
       console.log("Error fetching data", error);
     }
   };
+
   const handleLocation = async () => {
     const url = "https://maps.app.goo.gl/TtSmNr394bVp9J8n8";
     const supported = await Linking.canOpenURL(url);
@@ -197,6 +199,7 @@ export default function Restaurant() {
       console.log("Don't know how to open URL", url);
     }
   };
+
   useEffect(() => {
     getRestaurantData();
   }, []);
