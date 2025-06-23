@@ -47,10 +47,6 @@ export default function Restaurant() {
     }
   };
 
-
-
-
-  
   const handlePrevImage = () => {
     const carouselLength = carouselData[0]?.images.length;
     if (currentIndex > 0) {
