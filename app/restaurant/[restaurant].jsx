@@ -46,6 +46,10 @@ export default function Restaurant() {
       flatListRef.current.scrollToIndex({ index: nextIndex, animated: true });
     }
   };
+
+
+
+
   
   const handlePrevImage = () => {
     const carouselLength = carouselData[0]?.images.length;
