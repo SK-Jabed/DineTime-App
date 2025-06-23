@@ -23,6 +23,8 @@ export default function Index() {
   };
 
 
+
+
   
   return (
     <SafeAreaView className={`bg-[#2b2b2b]`}>
