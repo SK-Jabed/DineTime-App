@@ -22,6 +22,8 @@ export default function Index() {
     router.push("/home");
   };
 
+
+  
   return (
     <SafeAreaView className={`bg-[#2b2b2b]`}>
       <ScrollView contentContainerStyle={{ height: "100%" }}>
