@@ -18,6 +18,8 @@ import DatePickerComponent from "../../components/DatePicker";
 import GuestPickerComponent from "../../components/GuestPicker";
 import FindSlots from "../../components/FindSlots";
 
+
+
 export default function Restaurant() {
   const { restaurant } = useLocalSearchParams();
   const flatListRef = useRef(null);
