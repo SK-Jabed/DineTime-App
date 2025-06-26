@@ -144,6 +144,7 @@ export default function Restaurant() {
         collection(db, "restaurants"),
         where("name", "==", restaurant)
       );
+
       const restaurantSnapshot = await getDocs(restaurantQuery);
 
       if (restaurantSnapshot.empty) {
@@ -159,8 +160,10 @@ export default function Restaurant() {
           collection(db, "carousel"),
           where("res_id", "==", doc.ref)
         );
+
         const carouselSnapshot = await getDocs(carouselQuery);
         const carouselImages = [];
+
         if (carouselSnapshot.empty) {
           console.log("No matching carousel found");
           return;
@@ -174,12 +177,15 @@ export default function Restaurant() {
           collection(db, "slots"),
           where("ref_id", "==", doc.ref)
         );
+
         const slotsSnapshot = await getDocs(slotsQuery);
         const slots = [];
+
         if (carouselSnapshot.empty) {
           console.log("No matching slots found");
           return;
         }
+
         slotsSnapshot.forEach((slotDoc) => {
           slots.push(slotDoc.data());
         });
@@ -193,6 +199,7 @@ export default function Restaurant() {
   const handleLocation = async () => {
     const url = "https://maps.app.goo.gl/TtSmNr394bVp9J8n8";
     const supported = await Linking.canOpenURL(url);
+    
     if (supported) {
       await Linking.openURL(url);
     } else {
