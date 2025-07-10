@@ -62,6 +62,10 @@ export default function Restaurant() {
     }
   };
 
+
+
+
+  
   const carouselItem = ({ item }) => {
     return (
       <View style={{ width: windowWidth - 2 }} className="h-64 relative">
