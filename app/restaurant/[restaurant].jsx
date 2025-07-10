@@ -62,15 +62,6 @@ export default function Restaurant() {
     }
   };
 
-
-
-
-
-
-
-
-
-  
   const carouselItem = ({ item }) => {
     return (
       <View style={{ width: windowWidth - 2 }} className="h-64 relative">
@@ -208,7 +199,7 @@ export default function Restaurant() {
   const handleLocation = async () => {
     const url = "https://maps.app.goo.gl/TtSmNr394bVp9J8n8";
     const supported = await Linking.canOpenURL(url);
-    
+
     if (supported) {
       await Linking.openURL(url);
     } else {
