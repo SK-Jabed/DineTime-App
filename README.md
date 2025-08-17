@@ -1,50 +1,121 @@
-# Welcome to your Expo app 👋
+# 🍽️ DineTime - Restaurant Slot Booking System
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+DineTime is a mobile application built with **React Native & Expo** that allows users to effortlessly **book dinner slots**, explore **restaurants**, and manage their **dining schedule**.  
+With an intuitive interface, users can select a preferred date & time, track their booking history, and manage their personal profile – all in one place.
 
-## Get started
+---
 
-1. Install dependencies
+## 📖 Table of Contents
 
-   ```bash
-   npm install
-   ```
+- [✨ Features](#-features)
+- [🎯 Goals](#-goals)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [📦 Installation](#-installation)
+- [🚀 Usage](#-usage)
+- [⚙️ Configuration](#️-configuration)
+- [📸 Screenshots (Optional)](#-screenshots-optional)
+- [🐛 Troubleshooting](#-troubleshooting)
+- [🤝 Contributors](#-contributors)
+- [📜 License](#-license)
 
-2. Start the app
+---
 
-   ```bash
-    npx expo start
-   ```
+## ✨ Features
 
-In the output, you'll find options to open the app in a
+- 📅 **Book Slots** – Select your preferred date & time for dinner.
+- 🍴 **View Restaurants** – Browse restaurants and their dining schedules.
+- ⏳ **Check Availability** – Find available slots on any date.
+- 📝 **Booking History** – View and manage past reservations.
+- 👤 **User Profile** – Manage and update user details.
+- 🎨 **Beautiful UI** – TailwindCSS + NativeWind for modern styling.
+- 🔒 **Firebase Integration** – Secure data handling and authentication.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go)
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🎯 Goals
 
-## Get a fresh project
+The goal of **DineTime** is to provide a **seamless dining reservation experience** by:
 
-When you're ready, run:
+- Simplifying the process of finding and booking dinner slots.
+- Reducing wait times and improving user convenience.
+- Giving restaurants a modern tool to manage bookings.
+
+---
+
+## 🛠️ Tech Stack
+
+- ⚛️ **React Native (v0.79.3)** – Mobile framework
+- 📱 **Expo (v53.0.11)** – Development & build platform
+- 🔥 **Firebase** – Authentication & database
+- 🎨 **TailwindCSS + NativeWind** – Styling
+- 🧭 **React Navigation** – Navigation & routing
+- ⏰ **Datetime Picker** – Smooth slot selection
+- ✅ **Formik + Yup** – Form handling & validation
+- 🧪 **Jest + Expo Testing Library** – Testing framework
+
+---
+
+## 📦 Installation
+
+Follow these steps to set up the project locally:
 
 ```bash
-npm run reset-project
+# 1️⃣ Clone the repository
+git clone https://github.com/your-username/dinetime.git
+
+# 2️⃣ Navigate to project folder
+cd dinetime
+
+# 3️⃣ Install dependencies
+npm install
+# or
+yarn install
+
+# 4️⃣ Start the app
+npm start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🚀 Usage
 
-To learn more about developing your project with Expo, look at the following resources:
+Once the app is running:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+1. 📱 Scan the QR code with the **Expo Go app** to run it on your device.
+2. 💻 Or press `a` to run on Android Emulator, `i` for iOS Simulator, `w` for Web.
+3. 🔑 Configure Firebase (see below) before using authentication features.
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## ⚙️ Configuration
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+To enable full functionality:
+
+1. Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
+2. Add your Firebase config to the app (usually in a `firebaseConfig.js` file).
+3. Enable Authentication, Firestore, and any other required Firebase services.
+
+---
+
+## 🐛 Troubleshooting
+
+- ❌ **App not starting?** Run `expo start -c` to clear cache.
+- ⚠️ **Firebase errors?** Check if your Firebase config is correctly set.
+- 🛠️ **Styling issues?** Ensure `tailwindcss` is properly configured.
+
+---
+
+## 🤝 Contributors
+
+👨‍💻 Developed by **[Sheikh Jabed](https://github.com/SK-Jabed)**
+
+Contributions are welcome! Feel free to open issues & pull requests.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+You’re free to use, modify, and distribute it with attribution.
+
+---
