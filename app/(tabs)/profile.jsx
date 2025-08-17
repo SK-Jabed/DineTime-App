@@ -26,6 +26,7 @@ export default function Profile() {
 
       Alert.alert("Logged out", "You have been logged out successfully.");
       router.push("/signin");
+    // eslint-disable-next-line no-unused-vars
     } catch (error) {
       Alert.alert("Logged Error", "Error while logging out");
     }

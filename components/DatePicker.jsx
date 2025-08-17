@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, Platform } from "react-native";
 import React, { useState } from "react";
 import DateTimePicker from "@react-native-community/datetimepicker";
 
-const DatePickerComponent = ({ date, setDate }) => {
+const DatePicker = ({ date, setDate }) => {
   const [show, setShow] = useState(false);
 
   const onChange = (event, selectedDate) => {
@@ -57,4 +57,4 @@ const DatePickerComponent = ({ date, setDate }) => {
   );
 };
 
-export default DatePickerComponent;
+export default DatePicker;

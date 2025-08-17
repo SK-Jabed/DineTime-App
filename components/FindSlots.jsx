@@ -35,7 +35,7 @@ const FindSlots = ({
           restaurant: restaurant,
         });
 
-        alert("Booking successfully Done!");
+        alert("Booking Successfully Done!");
       } catch (error) {
         console.log(error);
       }
@@ -68,7 +68,7 @@ const FindSlots = ({
         restaurant: restaurant,
       });
 
-      alert("Booking successfully Done!");
+      alert("Booking Successfully Done!");
       setModalVisible(false);
     } catch (error) {
       console.log(error);

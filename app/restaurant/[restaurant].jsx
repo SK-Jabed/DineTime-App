@@ -14,8 +14,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../config/firebaseConfig";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import DatePickerComponent from "../../components/DatePicker";
-import GuestPickerComponent from "../../components/GuestPicker";
+import DatePicker from "../../components/DatePicker";
+import GuestPicker from "../../components/GuestPicker";
 import FindSlots from "../../components/FindSlots";
 
 export default function Restaurant() {
@@ -209,6 +209,7 @@ export default function Restaurant() {
 
   useEffect(() => {
     getRestaurantData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -263,7 +264,7 @@ export default function Restaurant() {
                 Select booking date
               </Text>
             </View>
-            <DatePickerComponent date={date} setDate={setDate} />
+            <DatePicker date={date} setDate={setDate} />
           </View>
           <View className="flex-1 flex-row bg-[#474747] rounded-lg  m-2 p-2 justify-end items-center">
             <View className="flex-1 flex-row">
@@ -272,7 +273,7 @@ export default function Restaurant() {
                 Select number of guests
               </Text>
             </View>
-            <GuestPickerComponent
+            <GuestPicker
               selectedNumber={selectedNumber}
               setSelectedNumber={setSelectedNumber}
             />

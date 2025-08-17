@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 
-const GuestPickerComponent = ({ selectedNumber, setSelectedNumber }) => {
+const GuestPicker = ({ selectedNumber, setSelectedNumber }) => {
   const decrement = () => {
     if (selectedNumber > 1) setSelectedNumber(selectedNumber - 1);
   };
@@ -29,4 +29,4 @@ const GuestPickerComponent = ({ selectedNumber, setSelectedNumber }) => {
   );
 };
 
-export default GuestPickerComponent;
+export default GuestPicker;

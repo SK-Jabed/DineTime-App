@@ -19,6 +19,7 @@ import { Formik } from "formik";
 import validationSchema from "../../utils/authSchema";
 import { doc, getFirestore, setDoc } from "firebase/firestore";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
 const Signup = () => {
   const router = useRouter();
   const auth = getAuth();
