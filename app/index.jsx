@@ -14,9 +14,6 @@ import logo from "../assets/images/dinetimelogo.png";
 const entryImg = require("../assets/images/Frame.png");
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-
-
-
 export default function Index() {
   const router = useRouter();
 
